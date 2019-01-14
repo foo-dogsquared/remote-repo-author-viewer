@@ -2,7 +2,7 @@
     "description": "An extension that lets you take to view profiles in one click.",
     "manifest_version": 2,
     "name": "dev-profile-viewer",
-    "version": "0.1",
+    "version": "0.3.1",
     "version_name": "pre-release",
     "developer": {
         "name": "Gabriel Arazas",
@@ -10,8 +10,8 @@
     },
     "homepage_url": "https://github.com/foo-dogsquared/dev-profile-viewer",
     "icons": {
-        "48": "icons/dev-profile-viewer-48.png",
-        "96": "icons/dev-profile-viewer-96.png"
+        "48": "icons/remote-repo-author-viewer-48.png",
+        "96": "icons/remote-repo-author-viewer-96.png"
     },
     "permissions": [
         "*://github.com/*",
