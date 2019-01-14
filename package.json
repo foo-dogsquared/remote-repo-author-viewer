@@ -1,0 +1,30 @@
+{
+  "name": "dev-profile-viewer-firefox",
+  "version": "1.0.0",
+  "description": "Want to view profiles quickly when visiting some developer-oriented websites? Here's one way to do that.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:popup": "npm run js_update:popup && cp ./src/popup/show_url.css ./dist/popup/ && cp ./src/popup/show_url.html ./dist/popup",
+    "js_update:popup": "babel ./src/popup/*.js --out-file ./dist/popup/show_url.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foo-dogsquared/dev-profile-viewer-firefox.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/foo-dogsquared/dev-profile-viewer-firefox/issues"
+  },
+  "homepage": "https://github.com/foo-dogsquared/dev-profile-viewer-firefox#readme",
+  "dependencies": {
+    "github-reserved-names": "1.1.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.2.3",
+    "@babel/core": "7.2.2",
+    "@babel/preset-env": "7.2.3"
+  }
+}
