@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:popup": "npm run js_update:popup && cp ./src/popup/show_url.css ./dist/popup/ && cp ./src/popup/show_url.html ./dist/popup",
+    "build:popup": "npm run js_update:popup && cp ./src/popup/show_url.css ./dist/popup/ && cp ./src/popup/show_url.html ./dist/popup && cp -r ./icons ./dist && cp manifest.json ./dist",
     "js_update:popup": "babel ./src/popup/*.js --out-file ./dist/popup/show_url.js"
   },
   "repository": {
