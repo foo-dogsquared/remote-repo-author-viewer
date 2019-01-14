@@ -5,6 +5,11 @@ Pretty self-explanatory, right?
 
 Want to view profiles quickly when visiting some developer-oriented websites? Here's one way to do that.
 
+## How to build?
+The popup files are stored in `src/popup` and the finished files will be in `dist/` directory with the icons and the `manifest.json`.
+
+To build the popup files, just enter `npm run build:popup`.
+
 ## To-dos / User stories
 - It should able to detect reserved words for each site in case account URLs and their URL of the reserve words are the same origin
 - Add support for [GitLab](https://gitlab.com) and [GitLab pages](https://about.gitlab.com/product/pages/)
