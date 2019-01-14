@@ -1,0 +1,17 @@
+{
+    "description": "An extension that lets you take to view profiles in one click.",
+    "manifest_version": 2,
+    "name": "dev-profile-viewer",
+    "version": "1.0",
+    "icons": {
+        "48": "icons/dev-profile-viewer-48.png",
+        "96": "icons/dev-profile-viewer-96.png"
+    },
+    "permissions": ["activeTab"],
+    "browser_action": {
+        "default_icon": "icons/dev-profile-viewer-96.png",
+        "default_title": "dev-profile-viewer",
+        "default_popup": "src/popup/show_url.html",
+        "browser_style": true
+    }
+}
