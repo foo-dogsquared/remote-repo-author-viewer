@@ -12,26 +12,32 @@ function detect_url(tab) {
     if (tab.url.match(github_regex)) {
         const path = tab.url.match(github_regex)[1];
         const username = path.split("/")[0];
-        const project = path.split("/")[1];
+        const project_name = path.split("/")[1];
         
         const site_name = "GitHub";
-        const username_link = (github_invalid_username_paths.includes(username) || (!project && is_github_404(tab.title))) ? undefined : `<a href="https://github.com/${username}">${username}</a>`;
-        const project_link = (!project || is_github_404(tab.title) || is_github_500(tab.title)) ? undefined : `<a href="https://github.com/${username}/${project}">${project}</a>`;
-
-        return {site_name, username_link, project_link};
+        const username_link = (github_invalid_username_paths.includes(username) || (!project_name && is_github_404(tab.title))) ? undefined : `https://github.com/${username}`;
+        const project_link = (!project_name || is_github_404(tab.title) || is_github_500(tab.title)) ? undefined : `https://github.com/${username}/${project_name}`;
+        return {site_name, username, username_link, project_name, project_link};
     }
     else if (tab.url.match(github_pages_regex)) {
         const username = tab.url.match(github_pages_regex)[1];
-        const username_link = `<a href="https://github.com/${username}">${username}</a>`;
+        const username_link = `https://github.com/${username}`;
         const site_name = "GitHub Pages";
 
         const project_path = tab.url.match(github_pages_regex)[2];
+        let project_name;
         let project_link;
         if (is_github_pages_404(tab.title)) project_link;
-        else if (!project_path) project_link = `<a href="https://github.com/${username}/${username}.github.io">${username}.github.io</a>`;
-        else project_link = `<a href="https://github.com/${username}/${project_path.split("/")[0]}">${project_path.split("/")[0]}</a>`;
+        else if (!project_path) {
+            project_name = `${username}.github.io`;
+            project_link = `https://github.com/${username}/${project_name}`;
+        }
+        else {
+            project_name = project_path.split("/")[0];
+            project_link = `https://github.com/${username}/${project_name}`;
+        }
 
-        return {site_name, username_link, project_link};
+        return {site_name, username, username_link, project_name, project_link};
     }
     else return;
 }

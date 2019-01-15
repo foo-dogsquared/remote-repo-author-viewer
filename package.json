@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:popup": "npm run js_update:popup && cp ./src/popup/show_url.css ./dist/popup/ && cp ./src/popup/show_url.html ./dist/popup && cp -r ./icons ./dist && cp manifest.json ./dist",
-    "js_update:popup": "babel ./src/popup/*.js --out-file ./dist/popup/show_url.js"
+    "build:popup:prod": "cp ./src/popup/show_url.css ./dist/popup/ && cp ./src/popup/show_url.html ./dist/popup && cp -r ./icons ./dist && cp manifest.json ./dist && npm run js_update:popup:prod ",
+    "build:popup:dev": "npm run js_update:popup:dev && cp ./src/popup/show_url.css ./dist/popup/ && cp ./src/popup/show_url.html ./dist/popup && cp -r ./icons ./dist && cp manifest.json ./dist",
+    "js_update:popup:prod": "babel ./src/popup/*.js --out-file ./dist/popup/show_url.js --minified --no-comments",
+    "js_update:popup:dev": "babel ./src/popup/*.js --out-file ./dist/popup/show_url.js"
   },
   "repository": {
     "type": "git",
